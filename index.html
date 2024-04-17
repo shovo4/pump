@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate H</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculate H</h1>
+        <table id="input-table">
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Diameter</th>
+                    <th>Flow</th>
+                    <th>Constant</th>
+                    <th>H</th>
+                    <th>Elevation (L)</th>
+                    <th>y = H + L</th>
+                    <th>TDH</th>
+                    <th>TDH - y</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Input rows will be added dynamically -->
+            </tbody>
+        </table>
+        <button onclick="addRow()">Add Row</button>
+        <button onclick="calculateH()">Calculate H</button>
+    </div>
+
+    <div class="container">
+        <h1>Elevation vs Distance Graph</h1>
+        <div class="input-group">
+            <label for="file">Select Excel file:</label>
+            <input type="file" id="file" accept=".xlsx" onchange="handleFile(event)">
+        </div>
+        <canvas id="graph-container"></canvas>
+    </div>
+
+    <div class="container">
+        <h1>TDH - y vs Distance Graph</h1>
+        <canvas id="tdh-graph-container"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
